@@ -92,7 +92,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **ʟüᴛꜰᴇɴ ʙᴇᴋʟᴇʏiɴiᴢ...**")
+    lel = await message.reply("🔄 **Asistan səsliyə qatılır🤓...**")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -100,7 +100,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "EfsaneMusicVaves"
+        user.first_name = "𓆩ຊ𓆪 ⲙ  υ  ⲋ  ⲓ  ⲥ"
     usar = user
     wew = usar.id
     try:
@@ -112,13 +112,13 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Önce beni Grubunun yöneticisi olarak ekle!</b>")
+                        "<b>İlk öncə məni gurupta admin ed 😒!</b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "**Müzik asistanı bu gruba müzik çalmak için katıldı 🎵**")
+                        message.chat.id, "**Bratvamı mən çağırdım bura rahat olun 😎**")
 
                 except UserAlreadyParticipant:
                     pass
@@ -143,17 +143,17 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://i.ibb.co/Qkz78hx/images-1.jpg"
+        thumb_name = "https://telegra.ph/file/0209db6b86c41ec9ba10a.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
-        views = "Yerel olarak eklendi"
+        views = "Yerli olaraq əlavə edildi"
 
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="Kanal 🔊",
-                        url="https://t.me/Sohbetdestek")
+                        text="Support 🌐",
+                        url="https://t.me/NEXUS_MMC")
                    
                 ]
             ]
@@ -190,10 +190,10 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="İzlemek için 🎬",
+                            text="İzləmək üçün 🎬",
                             url=f"{url}"),
                         InlineKeyboardButton(
-                            text="İndir 📥",
+                            text="Endir 📥",
                             url=f"{durl}")
 
                     ]
@@ -201,32 +201,32 @@ async def play(_, message: Message):
             )
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://i.ibb.co/Qkz78hx/images-1.jpg"
+            thumb_name = "https://telegra.ph/file/0209db6b86c41ec9ba10a.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="İzlemek için 🎬",
+                                text="İzləmək üçün 🎬",
                                 url=f"https://youtube.com")
 
                         ]
                     ]
                 )
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Daha uzun videolar {DURATION_LIMIT} dakikaların oynatılamasına izin verilmez!")
+             await lel.edit(f"😒 60'dəyqa üstü olmaz qaaş {DURATION_LIMIT} dakikaların oynatılamasına izin verilmez!")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
-            return await lel.edit("🧐 **Söylemek istediğin şarkı nedir?**")
-        await lel.edit("🔎 **Lütfen bekleyiniz...**")
+            return await lel.edit("🙄 **Axtardığın zibilin adını yaz da ala?**")
+        await lel.edit("🔎 **Gözdəyin...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🔁 **Sesler İşleniyor..🔥**")
+        await lel.edit("🔁 **Sesliyə qoşulur..🤓**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -249,7 +249,7 @@ async def play(_, message: Message):
                 
         except Exception as e:
             await lel.edit(
-                "❌ Şarkı bulunamadı.\n\nBaşka bir şarkı deneyin veya belki düzgün heceleyin."
+                "😑 Mahnı tapılmadı içini sistemliyim.\n\nBaşqa mahnını sınayın və ya bəlkə onu düzgün yazın."
             )
             print(str(e))
             return
@@ -258,10 +258,10 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="İzlemek için 🎬",
+                            text="İzləmək üçün 🎬",
                             url=f"{url}"),
                         InlineKeyboardButton(
-                            text="İndir 📥",
+                            text="Endir 📥",
                             url=f"{durl}")
 
                     ]
@@ -279,7 +279,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png",
-        caption="**🎵 şᴀʀᴋɪ:** {}\n**🕒 ꜱüʀᴇ:** {} min\n**👤 ᴇᴋʟᴇʏᴇɴ:** {}\n\n**#⃣ Kuyruğa Atılmış Konum:** {}".format(
+        caption="**🎵 Musiqi:** {}\n**🕒 Zaman:** {} min\n**🤓 İfaçı:** {}\n\n**#⃣ İndiki musiqi:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
@@ -290,7 +290,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**🎵 şᴀʀᴋɪ:** {}\n**🕒 ꜱüʀᴇ:** {} min\n**👤 ᴇᴋʟᴇʏᴇɴ:** {}\n\n**▶️ Şimdi şu anda `{}`...**".format(
+        caption="**🎵 Musiqi:** {}\n**🕒 Zaman:** {} min\n**🤓 İfaçı:** {}\n\n**▶️ İndiki musiqi🤓 `{}`...**".format(
         title, duration, message.from_user.mention(), message.chat.title
         ), )
         os.remove("final.png")
