@@ -7,32 +7,35 @@ from helpers.filters import command, other_filters2
 
 @Client.on_message(command(["start", f"start"]))
 async def start(_, message: Message):
-    await message.reply_photo("https://i.ibb.co/khRz42f/Turkish-Voice.jpg")
     await message.reply_text(
-        f"""**Merhaba, {message.from_user.mention} 🎵
-Sesli sohbetlerde müzik çalabilen botum. Ban yetkisiz, Ses yönetimi yetkisi verip, Asistanı gruba ekleyiniz.\n\nDüzen Tasarım [Talia Müzik 🎙️](https://t.me/Sohbetdestek).
+        f"""**Salam, {message.from_user.mention} 🎵
+Telegram qruplarında səsli söhbətdə musiqi səsləndirmək üçün yaradılmışam\n\n✅ Ətraflı məlumat üçün /bilgi'yazın.
  **""",
 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Grubunuza Ekle ➕", url="https://t.me/Efsanestar_bot?startgroup=true"
+                        "➕ Qurupa əlavə et", url="https://t.me/NexusMusiicbot?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔊 Asistan", url="https://t.me/Efsanestar_bot" 
+                        "💭 Söhbət gurupu", url="https://t.me/iron_Bloos_Gurup" 
                     ),
                     InlineKeyboardButton(
-                        "💬 Sohbet", url="https://t.me/Sohbetskyfall"
+                        "👨🏻‍💻 Sahibi", url="https://t.me/A_l_i_y_e_v_d_i"
                     ),
                     InlineKeyboardButton(
-                        "🙎‍♂️ Geliştirici", url="https://t.me/Mahoaga") 
+                        "🦹 Asistan", url="https://t.me/NexusAsistan") 
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧩 Kaynak Kodu", url="https://t.me/Sohbetdestek" 
+                        "⚕️ Əmirlər", url="https://t.me/NEXUS_MMC/9" 
+                    ),
+                    InlineKeyboardButton(
+                        "🌐 Support", url="https://t.me/NEXUS_MMC" 
+                    )
                     )
                 ]
             ]
@@ -47,7 +50,7 @@ async def bilgi(_, message: Message):
              [
                  [
                      InlineKeyboardButton(
-                         "👨‍🔧 Geliştirici", url="https://t.me/Sohbetdestek")
+                         "👨🏻‍💻 Sahibi", url="https://t.me/A_l_i_y_e_v_d_i")
                  ]
              ]
          )
