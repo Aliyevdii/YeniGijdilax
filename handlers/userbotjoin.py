@@ -13,21 +13,21 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Beni Önce Yönetici Yapmalısın</b>",
+            "<b>İlk öncə məni admin edin😒</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "Sesmusic Asistan"
+        user.first_name =  "Nexusmusic Asistan"
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id,"Senin İsteğin Üzerine Geldim")
+        await USER.send_message(message.chat.id,"Sənə görə geldim ha😒❤️")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>Asistan Zaten Grupta Var</b>",
+            "<b>Asistan Onsuz'da Grupta Var</b>",
         )
         pass
     except Exception as e:
